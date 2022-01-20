@@ -1,9 +1,11 @@
-package pl.pjwstk.projekt.users;
+package pl.pjwstk.projekt.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import pl.pjwstk.projekt.users.Users;
+import pl.pjwstk.projekt.users.UsersService;
 
 import java.util.List;
 

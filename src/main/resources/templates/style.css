@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+* {
+    box-sizing: border-box;
+    list-style: none;
+}
+
+
+/* core */
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: rgb(37, 37, 37);
+    display: block;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 20px 20 20px;
+    transition: background 0.2s linear;
+}
+
+h1 {
+    font-weight: bold;
+    margin: 0;
+}
+
+p {
+    font-size: 14px;
+    font-weight: 100px;
+    line-height: 20px;
+    letter-spacing: 0.5px;
+    margin: 20px 0 30px;
+}
+
+
+/* template */
+
+body.light {
+    background: #8d8d8d;
+}
+
+.leftbar.light {
+    background: #5e5e5e;
+}
+
+.game-cell.light {
+    background: #8d8d8d;
+}
+
+.modeDiv {
+    right: 2%;
+}
+
+.logoutButton {
+    height: 50%;
+}
+
+.checkbox {
+    opacity: 0;
+    position: absolute;
+}
+
+.label {
+    background-color: #111;
+    border-radius: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    position: relative;
+    height: 26px;
+    width: 50px;
+    transform: scale(1.5);
+}
+
+.label .ball {
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    height: 22px;
+    width: 22px;
+    transform: translateX(0px);
+    transition: transform 0.2s linear;
+}
+
+.checkbox:checked+.label .ball {
+    transform: translateX(24px);
+}
+
+
+/* footer */
+
+.footer {
+    position: absolute;
+    justify-content: center;
+    left: 25%;
+    bottom: -10%;
+    text-emphasis-color: rgb(37, 37, 37);
+}
+
+
+/* game */
+
+.tictactoe-container {
+    position: absolute;
+    text-align: center;
+    align-items: center;
+}
+
+.game-grid {
+    display: grid;
+    background: rgb(26, 26, 26);
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 15px;
+    margin-top: 50px;
+    transition: background 0.2s linear;
+}
+
+.game-cell {
+    background: rgb(37, 37, 37);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    height: 200px;
+    width: 200px;
+    transition: background 0.2s linear;
+}
+
+.x::after {
+    text-emphasis-color: white;
+    content: "x";
+    font-size: 200px;
+}
+
+.o::after {
+    content: "o";
+    font-size: 200px;
+}
