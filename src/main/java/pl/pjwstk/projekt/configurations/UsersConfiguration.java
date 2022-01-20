@@ -35,7 +35,6 @@ public class UsersConfiguration {
                     LocalDate.of(2004, JANUARY, 5),
                     false
             );
-
             repository.saveAll(List.of(Adam, Stanisław));
         };
     }

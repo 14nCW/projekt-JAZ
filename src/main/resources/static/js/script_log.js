@@ -1,4 +1,4 @@
-style.cssconst signUp = document.getElementById('signUp');
+const signUp = document.getElementById('signUp');
 const signIn = document.getElementById('signIn');
 const content = document.getElementById('content');
 
