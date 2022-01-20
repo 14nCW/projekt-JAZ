@@ -22,7 +22,6 @@ public class Users {
     private String email;
     private String password;
     private LocalDate dateOfBirth;
-    private boolean isAdmin;
 
     public Users() {
     }
@@ -32,15 +31,13 @@ public class Users {
                 String surname,
                 String email,
                 String password,
-                LocalDate dateOfBirth,
-                boolean isAdmin) {
+                LocalDate dateOfBirth) {
         this.id = id;
         this.name = name;
         this.surname = surname;
         this.email = email;
         this.password = password;
         this.dateOfBirth = dateOfBirth;
-        this.isAdmin = isAdmin;
     }
 
     public Users(String name,
@@ -54,7 +51,6 @@ public class Users {
         this.email = email;
         this.password = password;
         this.dateOfBirth = dateOfBirth;
-        this.isAdmin = isAdmin;
     }
 
     public Long getId() {
@@ -105,14 +101,6 @@ public class Users {
         this.dateOfBirth = dateOfBirth;
     }
 
-    public boolean isAdmin() {
-        return isAdmin;
-    }
-
-    public void setAdmin(boolean admin) {
-        isAdmin = admin;
-    }
-
     @Override
     public String toString() {
         return "Users{" +
@@ -122,7 +110,6 @@ public class Users {
                 ", email='" + email + '\n' +
                 ", password='" + password + '\n' +
                 ", dateOfBirth=" + dateOfBirth +
-                ", isAdmin=" + isAdmin +
                 '}';
     }
 }
