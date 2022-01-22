@@ -1,4 +1,4 @@
-package pl.pjwstk.projekt.users;
+package pl.pjwstk.projekt.web.users;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -17,40 +17,39 @@ public class Users {
             generator = "users_sequence"
     )
     private Long id;
+    private String username;
     private String name;
     private String surname;
     private String email;
     private String password;
-    private LocalDate dateOfBirth;
 
     public Users() {
     }
 
     public Users(Long id,
+                String username,
                 String name,
                 String surname,
                 String email,
-                String password,
-                LocalDate dateOfBirth) {
+                String password) {
         this.id = id;
+        this.username = username;
         this.name = name;
         this.surname = surname;
         this.email = email;
         this.password = password;
-        this.dateOfBirth = dateOfBirth;
     }
 
     public Users(String name,
                 String surname,
-                String email,
-                String password,
-                LocalDate dateOfBirth,
-                boolean isAdmin) {
+                 String username,
+                 String email,
+                String password) {
         this.name = name;
+        this.username = username;
         this.surname = surname;
         this.email = email;
         this.password = password;
-        this.dateOfBirth = dateOfBirth;
     }
 
     public Long getId() {
@@ -59,6 +58,14 @@ public class Users {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getName() {
@@ -93,23 +100,15 @@ public class Users {
         this.password = password;
     }
 
-    public LocalDate getDateOfBirth() {
-        return dateOfBirth;
-    }
-
-    public void setDateOfBirth(LocalDate dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
-    }
-
     @Override
     public String toString() {
         return "Users{" +
                 "id=" + id +
                 ", name='" + name + '\n' +
+                ", username='" + username + '\n' +
                 ", surname='" + surname + '\n' +
                 ", email='" + email + '\n' +
                 ", password='" + password + '\n' +
-                ", dateOfBirth=" + dateOfBirth +
                 '}';
     }
 }
