@@ -1,4 +1,6 @@
-package pl.pjwstk.projekt.formula.entity;
+package pl.pjwstk.projekt.formula.drivers;
+
+import pl.pjwstk.projekt.formula.information.Information;
 
 import javax.persistence.*;
 
@@ -22,8 +24,7 @@ public class Drivers {
     public Drivers() {
     }
 
-    public Drivers(Long driverId, String name, String surname) {
-        this.driverId = driverId;
+    public Drivers(String name, String surname) {
         this.name = name;
         this.surname = surname;
     }

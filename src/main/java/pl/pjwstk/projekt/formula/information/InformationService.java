@@ -1,9 +1,7 @@
-package pl.pjwstk.projekt.formula.service;
+package pl.pjwstk.projekt.formula.information;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
-import pl.pjwstk.projekt.formula.entity.Information;
-import pl.pjwstk.projekt.formula.repository.InformationJpaRepository;
 
 import java.util.List;
 
@@ -16,4 +14,8 @@ public class InformationService {
     public List<Information> getInformation() {
         return informationJpaRepository.findAll();
     };
+
+//    public String getTeamInformation(String name) {
+//        return informationJpaRepository.findBy(name);
+//    };
 }

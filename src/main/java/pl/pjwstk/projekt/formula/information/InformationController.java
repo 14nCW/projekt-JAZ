@@ -1,11 +1,9 @@
-package pl.pjwstk.projekt.formula.controller;
+package pl.pjwstk.projekt.formula.information;
 
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import pl.pjwstk.projekt.formula.entity.Information;
-import pl.pjwstk.projekt.formula.service.InformationService;
 
 import java.util.List;
 

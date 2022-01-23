@@ -1,0 +1,28 @@
+{
+    "Arkusz1": [
+        {
+            "mercedes": "Lewis HAMILTON",
+            "alpine": "Esteban OCON",
+            "haas": "Mick SCHUMACHER",
+            "redbull": "Max VERSTAPPEN",
+            "mclaren": "Lando NORRIS",
+            "aston": "Lance STROLL",
+            "ferrari": "Charles LECLERC",
+            "alpha tauri": "Pierre GASLY",
+            "alfa romeo": "Valtteri BOTTAS",
+            "williams": "Alexander ALBON"
+        },
+        {
+            "mercedes": "\r\nGeorge RUSSELL",
+            "alpine": "Fernando ALONSO",
+            "haas": "Nikita MAZEPIN",
+            "redbull": "Sergio PEREZ",
+            "mclaren": "Daniel RICCIARDO",
+            "aston": "Sebastian VETTEL",
+            "ferrari": "Carlos SAINZ",
+            "alpha tauri": "Yuki TSUNODA",
+            "alfa romeo": "Guanyu ZHOU",
+            "williams": "Nicholas LATIFI"
+        }
+    ]
+}

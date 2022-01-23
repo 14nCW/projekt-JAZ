@@ -1,4 +1,6 @@
-package pl.pjwstk.projekt.formula.entity;
+package pl.pjwstk.projekt.formula.information;
+
+import pl.pjwstk.projekt.formula.drivers.Drivers;
 
 import javax.persistence.*;
 
@@ -12,7 +14,10 @@ public class Information {
     @GeneratedValue(strategy = SEQUENCE)
     @Column(name = "id")
     private Long id;
+    private String name;
+
     private String fullName;
+
     private String base;
     private String chief;
     private String powerUnit;
@@ -20,7 +25,6 @@ public class Information {
     private Integer highestRacePlace;
     private Integer polePosition;
     private Integer fastestLaps;
-
     @OneToOne(mappedBy = "information", cascade = CascadeType.ALL)
     @PrimaryKeyJoinColumn
     private Drivers drivers;
@@ -29,6 +33,7 @@ public class Information {
 
     public Information(
 //            Long infoId,
+            String name,
                        String fullName,
                        String base,
                        String chief,
@@ -38,6 +43,7 @@ public class Information {
                        Integer polePosition,
                        Integer fastestLaps) {
 //        this.infoId = infoId;
+        this.name = name;
         this.fullName = fullName;
         this.base = base;
         this.chief = chief;
@@ -46,6 +52,14 @@ public class Information {
         this.highestRacePlace = highestRacePlace;
         this.polePosition = polePosition;
         this.fastestLaps = fastestLaps;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Long getInfoId() {
