@@ -19,16 +19,16 @@ public class ProjektApplication {
 		SpringApplication.run(ProjektApplication.class, args);
 	}
 
-	@Bean
-	CommandLineRunner commandLineRunner(DriversJpaRepository driversJpaRepository) {
-		return args -> {
-			Drivers test = new Drivers(
-					"Alex",
-					"Albon"
-			);
-			driversJpaRepository.save(test);
-		};
-
-
-	}
+//	@Bean
+//	CommandLineRunner commandLineRunner(DriversJpaRepository driversJpaRepository) {
+//		return args -> {
+//			Drivers test = new Drivers(
+//					"Alex",
+//					"Albon"
+//			);
+//			driversJpaRepository.save(test);
+//		};
+//
+//
+//	}
 }

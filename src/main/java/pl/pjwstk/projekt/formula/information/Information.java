@@ -1,5 +1,7 @@
 package pl.pjwstk.projekt.formula.information;
 
+import lombok.Getter;
+import lombok.Setter;
 import pl.pjwstk.projekt.formula.drivers.Drivers;
 
 import javax.persistence.*;
@@ -8,23 +10,42 @@ import static javax.persistence.GenerationType.SEQUENCE;
 
 @Table(name = "information")
 @Entity
+@Getter
+@Setter
 public class Information {
 
     @Id
     @GeneratedValue(strategy = SEQUENCE)
     @Column(name = "id")
     private Long id;
-    private String name;
 
+    @Column(name = "shortName")
+    private String shortName;
+
+    @Column(name = "fullName")
     private String fullName;
 
+    @Column(name = "base")
     private String base;
+
+    @Column(name = "chief")
     private String chief;
+
+    @Column(name = "powerUnit")
     private String powerUnit;
+
+    @Column(name = "worldChampions")
     private Integer worldChampions;
+
+    @Column(name = "highestRacePlace")
     private Integer highestRacePlace;
+
+    @Column(name = "polePosition")
     private Integer polePosition;
+
+    @Column(name = "fastestLaps")
     private Integer fastestLaps;
+
     @OneToOne(mappedBy = "information", cascade = CascadeType.ALL)
     @PrimaryKeyJoinColumn
     private Drivers drivers;
@@ -43,7 +64,7 @@ public class Information {
                        Integer polePosition,
                        Integer fastestLaps) {
 //        this.infoId = infoId;
-        this.name = name;
+        this.shortName = name;
         this.fullName = fullName;
         this.base = base;
         this.chief = chief;
@@ -51,86 +72,6 @@ public class Information {
         this.worldChampions = worldChampions;
         this.highestRacePlace = highestRacePlace;
         this.polePosition = polePosition;
-        this.fastestLaps = fastestLaps;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Long getInfoId() {
-        return id;
-    }
-
-    public void setInfoId(Long infoId) {
-        this.id = infoId;
-    }
-
-    public String getFullName() {
-        return fullName;
-    }
-
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
-    }
-
-    public String getBase() {
-        return base;
-    }
-
-    public void setBase(String base) {
-        this.base = base;
-    }
-
-    public String getChief() {
-        return chief;
-    }
-
-    public void setChief(String chief) {
-        this.chief = chief;
-    }
-
-    public String getPowerUnit() {
-        return powerUnit;
-    }
-
-    public void setPowerUnit(String powerUnit) {
-        this.powerUnit = powerUnit;
-    }
-
-    public Integer getWorldChampions() {
-        return worldChampions;
-    }
-
-    public void setWorldChampions(Integer worldChampions) {
-        this.worldChampions = worldChampions;
-    }
-
-    public Integer getHighestRacePlace() {
-        return highestRacePlace;
-    }
-
-    public void setHighestRacePlace(Integer highestRacePlace) {
-        this.highestRacePlace = highestRacePlace;
-    }
-
-    public Integer getPolePosition() {
-        return polePosition;
-    }
-
-    public void setPolePosition(Integer polePosition) {
-        this.polePosition = polePosition;
-    }
-
-    public Integer getFastestLaps() {
-        return fastestLaps;
-    }
-
-    public void setFastestLaps(Integer fastestLaps) {
         this.fastestLaps = fastestLaps;
     }
 

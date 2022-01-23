@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Information</title>
+    <link rel="icon" href="http://www.histurion.pl/grafika/slownik/xx_wiek/normal/jan_pawel_ii.jpg">
+</head>
+<body>
+<img src="https://i.redd.it/3w1aiko0tvg61.png">
+<div class="container">
+    <h1>Information about team</h1>
+    <hr>
+    <div th:object="${information}">
+        <h1 th:text="*{shortName}"></h1>
+        <h1 th:text="*{fullName}"></h1>
+        <h1 th:text="*{base}"></h1>
+        <h1 th:text="*{chief}"></h1>
+        <h1 th:text="*{powerUnit}"></h1>
+        <h1 th:text="*{worldChampions}"></h1>
+        <h1 th:text="*{highestRacePlace}"></h1>
+        <h1 th:text="*{polePosition}"></h1>
+        <h1 th:text="*{fastestLaps}"></h1>
+    </div>
+</div>
+
+</body>
+</html>
