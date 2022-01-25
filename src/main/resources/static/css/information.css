@@ -1,0 +1,27 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    max-width: 100%;
+}
+
+title {
+    color: #eeeeee;
+}
+
+body {
+    font-family: 'Montserrat';
+    background-color: #eeeeee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+}
+
+a:visited {
+    text-underline: none;}
+
+.table {
+    padding: 0.5vw;
+}

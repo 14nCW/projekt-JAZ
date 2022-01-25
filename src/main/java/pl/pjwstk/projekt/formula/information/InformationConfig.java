@@ -6,12 +6,13 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Controller;
 
 import java.util.List;
+import java.util.Locale;
 
 @Configuration
 public class InformationConfig {
 
     @Bean
-    CommandLineRunner commandLineRunner(InformationJpaRepository informationJpaRepository) {
+    CommandLineRunner teamsImport(InformationJpaRepository informationJpaRepository) {
         return args -> {
             Information mercedes = new Information(
                     "mercedes",
@@ -22,7 +23,9 @@ public class InformationConfig {
                     8,
                     1,
                     127,
-                    85
+                    85,
+                    "Lewis HAMILTON",
+                    "George RUSSELL"
             );
 
             Information alpine = new Information(
@@ -34,7 +37,9 @@ public class InformationConfig {
                     2,
                     1,
                     20,
-                    15
+                    15,
+                    "Esteban OCON",
+                    "Fernando ALONSO"
             );
 
             Information haas = new Information(
@@ -46,7 +51,9 @@ public class InformationConfig {
                     0,
                     4,
                     0,
-                    0
+                    0,
+                    "Mick SCHUMACHER",
+                    "Nikita MAZEPIN"
             );
 
             Information redbull = new Information(
@@ -58,7 +65,9 @@ public class InformationConfig {
                     4,
                     1,
                     73,
-                    76
+                    76,
+                    "Max VERSTAPPEN",
+                    "Sergio PEREZ"
             );
 
             Information mcLaren = new Information(
@@ -70,11 +79,13 @@ public class InformationConfig {
                     8,
                     1,
                     156,
-                    160
+                    160,
+                    "Lando NORRIS",
+                    "Daniel RICCIARDO"
             );
 
             Information aston = new Information(
-                    "astonmartin",
+                    "aston martin",
                     "Aston Martin Cognizant Formula One Team",
                     "Silverstone, United Kingdom",
                     "Mike Krack",
@@ -82,7 +93,9 @@ public class InformationConfig {
                     0,
                     0,
                     1,
-                    1
+                    1,
+                    "Lance STROLL",
+                    "Sebastian VETTEL"
             );
 
             Information ferrari = new Information(
@@ -94,11 +107,13 @@ public class InformationConfig {
                     16,
                     1,
                     223,
-                    253
+                    253,
+                    "Charles LECLERC",
+                    "Carlos SAINZ"
             );
 
             Information alphaTauri = new Information(
-                    "alphatauri",
+                    "alpha tauri",
                     "Scuderia AlphaTauri",
                     "Faenza, Italy",
                     "Franz Tost",
@@ -106,11 +121,13 @@ public class InformationConfig {
                     0,
                     1,
                     1,
-                    2
+                    2,
+                    "Pierre GASLY",
+                    "Yuki TSUNODA"
             );
 
             Information alfaRomeo = new Information(
-                    "alfaromeo",
+                    "alfa romeo",
                     "Alfa Romeo F1 Team ORLEN",
                     "Hinwil, Switzerland",
                     "Frédéric Vasseur",
@@ -118,7 +135,9 @@ public class InformationConfig {
                     0,
                     1,
                     1,
-                    5
+                    5,
+                    "Valtteri BOTTAS",
+                    "Guanyu ZHOU"
             );
 
             Information williams = new Information(
@@ -130,7 +149,9 @@ public class InformationConfig {
                     9,
                     1,
                     129,
-                    133
+                    133,
+                    "Alexander ALBON",
+                    "Nicholas LATIFI"
             );
 
             informationJpaRepository.saveAll(

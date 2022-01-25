@@ -1,27 +1,76 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <head>
+    <link rel="icon" href="/static/png/f1logo.svg">
+    <link rel="stylesheet" href="css/information.css">
+    <link href="../css/navbar.css" rel="stylesheet" type="text/css"/>
+    <link href="../css/information.css" rel="stylesheet" type="text/css"/>
     <meta charset="UTF-8">
     <title>Information</title>
-    <link rel="icon" href="http://www.histurion.pl/grafika/slownik/xx_wiek/normal/jan_pawel_ii.jpg">
 </head>
 <body>
-<img src="https://i.redd.it/3w1aiko0tvg61.png">
-<div class="container">
-    <h1>Information about team</h1>
-    <hr>
-    <div th:object="${information}">
-        <h1 th:text="*{shortName}"></h1>
-        <h1 th:text="*{fullName}"></h1>
-        <h1 th:text="*{base}"></h1>
-        <h1 th:text="*{chief}"></h1>
-        <h1 th:text="*{powerUnit}"></h1>
-        <h1 th:text="*{worldChampions}"></h1>
-        <h1 th:text="*{highestRacePlace}"></h1>
-        <h1 th:text="*{polePosition}"></h1>
-        <h1 th:text="*{fastestLaps}"></h1>
+<div class="navbar">
+    <div sec:authorize="isAuthenticated()" class="navbar">
+<!--        <div class="welcome">-->
+<!--            <h1 sec:authorize="isAuthenticated()" href="#">Welcome</h1>-->
+<!--        </div>-->
+        <div class="info">
+            <h1>F1 informator page</h1>
+        </div>
+        <div class="logout">
+            <form th:action="@{/logout}" method="post">
+                <input type="submit" value="Logout"/>
+            </form>
+        </div>
     </div>
 </div>
 
+<h1>Information about team</h1>
+
+<table border="1" class="table table-striped table-responsive-md" th:object="${information}">
+    <tr>
+        <th>Team Full Name</th>
+        <td th:text="${information.fullName}"></td>
+    </tr>
+    <tr>
+        <th>Base Location</th>
+        <td th:text="${information.base}"></td>
+    </tr>
+    <tr>
+        <th>Team Chief</th>
+        <td th:text="${information.chief}"></td>
+    </tr>
+    <tr>
+        <th>Engine Provider</th>
+        <td th:text="${information.powerUnit}"></td>
+    </tr>
+    <tr>
+        <th>World Champions</th>
+        <td th:text="${information.worldChampions}"></td>
+    </tr>
+    <tr>
+        <th>Highest Race Place</th>
+        <td th:text="${information.highestRacePlace}"></td>
+    </tr>
+    <tr>
+        <th>Pole Positions</th>
+        <td th:text="${information.polePosition}"></td>
+    </tr>
+    <tr>
+        <th>Fastest Laps</th>
+        <td th:text="${information.fastestLaps}"></td>
+    </tr>
+    <tr>
+        <th>First Driver</th>
+        <td th:text="${information.driver1}"></td>
+    </tr>
+    <tr>
+        <th>Second Driver</th>
+        <td th:text="${information.driver2}"></td>
+    </tr>
+</table>
+<a th:href="@{/}">Go Back</a>
 </body>
 </html>

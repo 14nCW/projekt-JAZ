@@ -20,13 +20,6 @@ public class InformationController {
     @Autowired
     private final InformationService informationService;
 
-//    @GetMapping("/information")
-//    public String getCardList(Model model){
-//        model.addAttribute("listInformation", informationService.getInformation);
-//        return "information";
-//    }
-
-
     @GetMapping("information/{id}")
     public String showInformationPage(@PathVariable(value = "id") long id, Model model){
         Information information = informationService.getInformationById(id);
@@ -35,4 +28,13 @@ public class InformationController {
 
         return "information";
     }
+
+    @GetMapping("/")
+    public String showIndexInformationPage(Model model){
+        model.addAttribute("information", informationService.getInformationList());
+
+        return "index";
+    }
+
+
 }

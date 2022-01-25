@@ -2,7 +2,7 @@ package pl.pjwstk.projekt.formula.information;
 
 import lombok.Getter;
 import lombok.Setter;
-import pl.pjwstk.projekt.formula.drivers.Drivers;
+//import pl.pjwstk.projekt.formula.drivers.Drivers;
 
 import javax.persistence.*;
 
@@ -13,11 +13,18 @@ import static javax.persistence.GenerationType.SEQUENCE;
 @Getter
 @Setter
 public class Information {
-
     @Id
-    @GeneratedValue(strategy = SEQUENCE)
+    @SequenceGenerator(
+            name = "information_sequence",
+            sequenceName = "information_sequence",
+            allocationSize = 1
+    )
+    @GeneratedValue(
+            strategy = SEQUENCE,
+            generator = "information_sequence"
+    )
     @Column(name = "id")
-    private Long id;
+    private long id;
 
     @Column(name = "shortName")
     private String shortName;
@@ -46,24 +53,31 @@ public class Information {
     @Column(name = "fastestLaps")
     private Integer fastestLaps;
 
-    @OneToOne(mappedBy = "information", cascade = CascadeType.ALL)
-    @PrimaryKeyJoinColumn
-    private Drivers drivers;
+    @Column(name = "driver1")
+    private String driver1;
 
-    public Information() {}
+    @Column(name = "driver2")
+    private String driver2;
+
+//    @OneToOne(mappedBy = "information", cascade = CascadeType.ALL)
+//    @PrimaryKeyJoinColumn
+//    private Drivers drivers;
+
+    public Information() {
+    }
 
     public Information(
-//            Long infoId,
             String name,
-                       String fullName,
-                       String base,
-                       String chief,
-                       String powerUnit,
-                       Integer worldChampions,
-                       Integer highestRacePlace,
-                       Integer polePosition,
-                       Integer fastestLaps) {
-//        this.infoId = infoId;
+            String fullName,
+            String base,
+            String chief,
+            String powerUnit,
+            Integer worldChampions,
+            Integer highestRacePlace,
+            Integer polePosition,
+            Integer fastestLaps,
+            String driver1,
+            String driver2) {
         this.shortName = name;
         this.fullName = fullName;
         this.base = base;
@@ -73,6 +87,8 @@ public class Information {
         this.highestRacePlace = highestRacePlace;
         this.polePosition = polePosition;
         this.fastestLaps = fastestLaps;
+        this.driver1 = driver1;
+        this.driver2 = driver2;
     }
 
     @Override
@@ -87,6 +103,8 @@ public class Information {
                 ", highestRacePlace=" + highestRacePlace +
                 ", polePosition=" + polePosition +
                 ", fastestLaps=" + fastestLaps +
+                ", driverOne=" + driver1 +
+                ", driverTwo=" + driver2 +
                 '}';
     }
 }

@@ -5,26 +5,25 @@
 <head>
     <meta charset="utf8"/>
     <link rel="stylesheet"  th:href="@{/css/login.css}">
-    <title>JAZ projekt</title>
+    <title>Register page</title>
 </head>
 <body>
 <div class="popup" id="popup-1">
     <div class="content" id="content">
         <div class="form-container sign-up-container">
-<!--            <form name="register" th:action="@{/register}" method="post">-->
-<!--                <h1>Create Account!</h1>-->
-<!--                <input type="text" placeholder="Username" name="username" required>-->
-<!--                <input type="text" placeholder="Name" name="name" required>-->
-<!--                <input type="text" placeholder="Surname" name="surname" required>-->
-<!--                <input type="password" placeholder="Password" name="password" required>-->
-<!--                <button>Sign up</button>-->
-<!--            </form>-->
+                        <form action="#" name="register" th:action="@{/process_register}" method="post">
+                            <h1>Create Account!</h1>
+                            <input type="text" placeholder="Username" name="username" th:field="*{user.username}" required>
+                            <input type="email" placeholder="Email" name="email" th:field="*{user.email}" required>
+                            <input type="password" placeholder="Password" name="password" th:field="*{user.password}" required>
+                            <button type="submit">Sign up</button>
+                        </form>
         </div>
 
 <!--        <div class="form-container sign-in-container">-->
 <!--            <form name="login" th:action="@{/login}" th:object="${username}" method="post">-->
 <!--                <h1>Sign in!</h1>-->
-<!--                <input type="text" placeholder="Username" th:field="u${username}" required>-->
+<!--                &lt;!&ndash;                <input type="text" placeholder="Username" th:field="u${username}" required>&ndash;&gt;-->
 <!--                <input type="password" placeholder="Password" name="passwordLogin" required>-->
 <!--                <button>Sign in</button>-->
 <!--            </form>-->

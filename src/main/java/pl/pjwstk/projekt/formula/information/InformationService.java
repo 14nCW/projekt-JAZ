@@ -3,6 +3,7 @@ package pl.pjwstk.projekt.formula.information;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.criteria.CriteriaBuilder;
 import java.util.List;
 import java.util.Optional;
 
@@ -24,4 +25,8 @@ public class InformationService {
         }
         return information;
     };
+
+    public List<Information> getInformationList() {
+        return informationJpaRepository.findAll().stream().toList();
+    }
 }
