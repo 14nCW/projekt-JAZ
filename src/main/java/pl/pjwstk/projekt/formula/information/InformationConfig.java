@@ -59,7 +59,7 @@ public class InformationConfig {
             Information redbull = new Information(
                     "redbull",
                     "Red Bull Racing",
-                    "lton Keynes, United Kingdom",
+                    "Milton Keynes, United Kingdom",
                     "Christian Horner",
                     "Red Bull Powertrains",
                     4,
@@ -73,7 +73,7 @@ public class InformationConfig {
             Information mcLaren = new Information(
                     "mclaren",
                     "McLaren F1 Team",
-                    "king, United Kingdom",
+                    "Woking, United Kingdom",
                     "Andreas Seidl",
                     "Mercedes",
                     8,

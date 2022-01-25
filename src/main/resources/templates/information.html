@@ -17,17 +17,17 @@
 <!--            <h1 sec:authorize="isAuthenticated()" href="#">Welcome</h1>-->
 <!--        </div>-->
         <div class="info">
-            <h1>F1 informator page</h1>
+            <h1>F1</h1>
         </div>
         <div class="logout">
             <form th:action="@{/logout}" method="post">
-                <input type="submit" value="Logout"/>
+                <input class="logoutBtn" type="submit" value="Logout">
             </form>
         </div>
     </div>
 </div>
 
-<h1>Information about team</h1>
+<h1 class="title">Information about team</h1>
 
 <table border="1" class="table table-striped table-responsive-md" th:object="${information}">
     <tr>
@@ -71,6 +71,6 @@
         <td th:text="${information.driver2}"></td>
     </tr>
 </table>
-<a th:href="@{/}">Go Back</a>
+<a th:href="@{/}" class="backBtn">Go Back</a>
 </body>
 </html>

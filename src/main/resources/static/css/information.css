@@ -9,6 +9,11 @@ title {
     color: #eeeeee;
 }
 
+.title {
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+}
+
 body {
     font-family: 'Montserrat';
     background-color: #eeeeee;
@@ -24,4 +29,18 @@ a:visited {
 
 .table {
     padding: 0.5vw;
+    font-size: 25px;
+}
+
+.backBtn {
+    margin-top: 5vh;
+    background-color: #e10600;
+    border: none;
+    border-radius: 30px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
 }
